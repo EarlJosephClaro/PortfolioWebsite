@@ -1,140 +1,99 @@
-# Earl Joseph A. Claro - Resume Website
+# Earl Joseph A. Claro — Portfolio
 
-A modern, responsive personal resume website built with Next.js, TypeScript, and Tailwind CSS.
+A personal portfolio and résumé site for **Earl Joseph A. Claro**, a full-stack web developer at Sun-Asterisk specializing in React, Next.js, and NestJS. Built as a warm, editorial single-page site — deliberately *not* a generic template.
+
+**Live:** https://earljosephclaro.github.io/PortfolioWebsite/
 
 ## 🚀 Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
+- **Framework:** Next.js 15 (App Router, static export)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
+- **Fonts:** Spectral (serif display) · Hanken Grotesk (body) · JetBrains Mono (metrics/labels) — via `next/font/google`
 - **Icons:** React Icons
-- **Deployment:** Vercel (recommended)
+- **Hosting:** GitHub Pages (GitHub Actions)
 
-## ✨ Features
+## 🎨 Design System
 
-- 📱 Fully responsive design
-- 🎨 Modern and clean UI
-- ⚡ Fast performance with Next.js optimizations
-- 🔍 SEO optimized
-- 🎯 Smooth scrolling navigation
-- 📊 Comprehensive sections:
-  - Hero/Landing
-  - About Me
-  - Professional Experience
-  - Technical Skills
-  - Education & Languages
-  - Contact Information
+The visual direction is documented in two root files:
+
+- **[PRODUCT.md](PRODUCT.md)** — strategy: audience, positioning, brand personality, and design principles.
+- **[DESIGN.md](DESIGN.md)** — visual system: palette, typography, elevation, components, and do's/don'ts.
+
+Highlights:
+
+- Warm terracotta accent (`#C0562E`) on a true off-white canvas (`#FBFAF8`) — warmth carried by color and type, never a beige background.
+- Flat-by-default surfaces with 1px hairline borders; shadows only appear on hover/focus.
+- WCAG AA contrast, visible terracotta focus rings, and a reduced-motion-safe entrance animation.
+- Proof metrics surfaced as monospace typographic moments rather than a gradient hero-metric block.
+
+## 📄 Sections
+
+Hero · About · Professional Experience · Technical Skills · Education & Languages · Contact
 
 ## 🛠️ Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ installed
-- npm or yarn package manager
+- Node.js 20+
+- npm
 
-### Installation
+### Install & run
 
-1. Clone the repository or navigate to the project folder:
-\`\`\`bash
-cd "d:\\Personal Project\\ResumeWebsite"
-\`\`\`
-
-2. Install dependencies:
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+npm run dev      # http://localhost:3002
+```
 
-3. Run the development server:
-\`\`\`bash
-npm run dev
-\`\`\`
+### Build (static export)
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
+```bash
+npm run build    # outputs static site to ./out
+```
 
-## 📦 Build & Deploy
+## 📁 Project Structure
 
-### Build for Production
-
-\`\`\`bash
-npm run build
-\`\`\`
-
-This creates an optimized static export in the `out` folder.
-
-### Deploy to Vercel
-
-1. Install Vercel CLI:
-\`\`\`bash
-npm install -g vercel
-\`\`\`
-
-2. Deploy:
-\`\`\`bash
-vercel
-\`\`\`
-
-Or connect your GitHub repository to Vercel for automatic deployments.
-
-### Alternative Deployment Options
-
-- **GitHub Pages:** Use the static export from the `out` folder
-- **Netlify:** Deploy directly from the repository
-- **Azure Static Web Apps:** Deploy using Azure CLI
-
-## 📝 Customization
-
-To update the resume data, edit the following file:
-- `data/resume.ts` - Contains all personal information, experience, skills, education, etc.
-
-To customize styling:
-- `tailwind.config.ts` - Tailwind CSS configuration
-- `app/globals.css` - Global styles
-- Individual component files in `components/` folder
-
-## 📄 Project Structure
-
-\`\`\`
+```
 ResumeWebsite/
 ├── app/
-│   ├── layout.tsx       # Root layout with fonts and metadata
-│   ├── page.tsx         # Main home page
-│   └── globals.css      # Global styles
+│   ├── layout.tsx        # Root layout — fonts + metadata
+│   ├── page.tsx          # Home — section composition
+│   └── globals.css       # Design tokens, base styles, motion
 ├── components/
-│   ├── Header.tsx       # Navigation header
-│   ├── Hero.tsx         # Landing section
-│   ├── About.tsx        # About section
-│   ├── Experience.tsx   # Work experience
-│   ├── Skills.tsx       # Technical skills
-│   ├── Education.tsx    # Education & languages
-│   ├── Contact.tsx      # Contact information
-│   └── Footer.tsx       # Footer
+│   ├── Header.tsx        # Fixed nav (scroll-aware)
+│   ├── Hero.tsx          # Landing + proof metrics
+│   ├── About.tsx         # Summary + focus / achievements
+│   ├── Experience.tsx    # Work history
+│   ├── Skills.tsx        # Technical skills
+│   ├── Education.tsx     # Education & languages
+│   ├── Contact.tsx       # Contact channels
+│   ├── Footer.tsx        # Footer
+│   └── SectionHeading.tsx # Shared section heading (Spectral + terracotta rule)
 ├── data/
-│   └── resume.ts        # Resume data
-├── public/              # Static assets
-├── .github/
-│   └── agents/          # Custom GitHub Copilot agents
-├── next.config.ts       # Next.js configuration
-├── tailwind.config.ts   # Tailwind CSS configuration
-└── package.json         # Project dependencies
-\`\`\`
+│   └── resume.ts         # All résumé content — edit here
+├── PRODUCT.md            # Product / strategy doc
+├── DESIGN.md             # Visual design system
+├── tailwind.config.ts    # Palette + font tokens
+├── next.config.ts        # Static export + GitHub Pages basePath
+└── .github/workflows/deploy.yml  # GitHub Pages CI
+```
 
-## 👨‍💻 About
+## ✏️ Customization
 
-This resume website was created for **Earl Joseph A. Claro**, a Junior Web Developer at Sun-Asterisk Software Development Inc., specializing in ReactJS, NextJS, and NestJS.
+- **Content:** edit [`data/resume.ts`](data/resume.ts) — personal info, experience, skills, education, languages.
+- **Palette & fonts:** [`tailwind.config.ts`](tailwind.config.ts) and [`app/layout.tsx`](app/layout.tsx).
+- **Design rules:** [`DESIGN.md`](DESIGN.md).
 
-**Mission:** *Keep Building Confidence and Keep Coding*
+## 🌐 Deployment
+
+Every push to `main` triggers the **Deploy to GitHub Pages** workflow ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)): it runs `npm run build` (with `GITHUB_PAGES=true` for the correct `basePath`) and publishes `./out` to GitHub Pages. It can also be run manually from **Actions → Deploy to GitHub Pages → Run workflow**.
 
 ## 📧 Contact
 
 - **Email:** earlclaro@gmail.com
-- **Phone:** +63 960 039 5057
 - **GitHub:** [EarlJosephClaro](https://github.com/EarlJosephClaro)
 - **LinkedIn:** [Earl Joseph Claro](https://www.linkedin.com/in/earl-joseph-claro-603350163/)
 
-## 📜 License
-
-This project is open source and available for personal use.
-
 ---
 
-Built with ❤️ using Next.js & Tailwind CSS
+*"Keep Building Confidence and Keep Coding."*

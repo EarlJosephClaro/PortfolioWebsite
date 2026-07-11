@@ -32,15 +32,26 @@ function List({ title, items }: { title: string; items: string[] }) {
 }
 
 export default function About() {
+  // Break the long summary into two balanced paragraphs for readable rhythm.
+  const splitAt = personalInfo.summary.indexOf("Skilled in building");
+  const paragraphs =
+    splitAt > 0
+      ? [personalInfo.summary.slice(0, splitAt).trim(), personalInfo.summary.slice(splitAt).trim()]
+      : [personalInfo.summary];
+
   return (
     <section id="about" className="bg-canvas py-24">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl">
           <SectionHeading title="About" />
 
-          <p className="mb-12 max-w-2xl text-lg leading-relaxed text-graphite text-pretty">
-            {personalInfo.summary}
-          </p>
+          <div className="mb-14 max-w-[62ch] space-y-4">
+            {paragraphs.map((para, i) => (
+              <p key={i} className="text-[1.0625rem] leading-relaxed text-graphite text-pretty">
+                {para}
+              </p>
+            ))}
+          </div>
 
           <div className="grid gap-6 md:grid-cols-2">
             <List title="Professional Focus" items={focus} />

@@ -1,43 +1,34 @@
-"use client";
-
 import { education, languages } from "@/data/resume";
-import { FaGraduationCap, FaMapMarkerAlt, FaCalendar, FaLanguage } from "react-icons/fa";
+import { FaGraduationCap, FaMapMarkerAlt, FaLanguage } from "react-icons/fa";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 bg-gray-50">
+    <section id="education" className="bg-[#F4F1EC] py-24">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">
-            Education & Languages
-          </h2>
-          <div className="h-1 w-20 bg-primary-500 mx-auto mb-12"></div>
+        <div className="max-w-5xl">
+          <SectionHeading title="Education & Languages" />
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid gap-8 md:grid-cols-2">
             {/* Education */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <FaGraduationCap className="mr-3 text-primary-600" />
+              <h3 className="mb-6 flex items-center gap-3 font-sans text-lg font-semibold text-ink">
+                <FaGraduationCap className="text-terracotta" aria-hidden />
                 Education
               </h3>
-              <div className="space-y-6">
-                {education.map((edu, index) => (
+              <div className="space-y-4">
+                {education.map((edu) => (
                   <div
-                    key={index}
-                    className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+                    key={`${edu.degree}-${edu.institution}`}
+                    className="rounded-xl border border-hairline bg-surface p-6"
                   >
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">
-                      {edu.degree}
-                    </h4>
-                    <p className="text-primary-600 font-semibold mb-2">
-                      {edu.institution}
-                    </p>
-                    <div className="flex items-center text-gray-600 text-sm mb-1">
-                      <FaMapMarkerAlt className="mr-2 text-primary-500" />
-                      <span>{edu.location}</span>
-                    </div>
-                    <div className="flex items-center text-gray-600 text-sm">
-                      <FaCalendar className="mr-2 text-primary-500" />
+                    <h4 className="font-sans text-base font-semibold text-ink">{edu.degree}</h4>
+                    <p className="mt-1 font-medium text-terracotta">{edu.institution}</p>
+                    <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-stone">
+                      <span className="flex items-center gap-1.5">
+                        <FaMapMarkerAlt aria-hidden />
+                        {edu.location}
+                      </span>
                       <span>Graduated {edu.graduation}</span>
                     </div>
                   </div>
@@ -47,26 +38,26 @@ export default function Education() {
 
             {/* Languages */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <FaLanguage className="mr-3 text-primary-600" />
+              <h3 className="mb-6 flex items-center gap-3 font-sans text-lg font-semibold text-ink">
+                <FaLanguage className="text-terracotta" aria-hidden />
                 Languages
               </h3>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <div className="space-y-4">
+              <div className="rounded-xl border border-hairline bg-surface p-6">
+                <ul className="space-y-4">
                   {languages.map((lang, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between border-b border-gray-200 pb-3 last:border-b-0"
+                    <li
+                      key={lang.name}
+                      className={`flex items-center justify-between ${
+                        index < languages.length - 1 ? "border-b border-hairline pb-4" : ""
+                      }`}
                     >
-                      <span className="text-lg font-semibold text-gray-900">
-                        {lang.name}
-                      </span>
-                      <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">
+                      <span className="font-sans font-medium text-ink">{lang.name}</span>
+                      <span className="rounded-full border border-hairline px-3 py-1 font-mono text-xs text-graphite">
                         {lang.proficiency}
                       </span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           </div>

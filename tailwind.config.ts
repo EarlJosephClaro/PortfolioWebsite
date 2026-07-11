@@ -9,22 +9,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Warm terracotta ramp — replaces the default sky-blue "primary" so
+        // existing components inherit the new brand instead of blue.
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: "#FBF0EB",
+          100: "#F5DCCF",
+          200: "#EABBA1",
+          300: "#DE9873",
+          400: "#D0744A",
+          500: "#C0562E",
+          600: "#9A421F",
+          700: "#7E3A1C",
+          800: "#5A2914",
+          900: "#3E1C0E",
         },
+        // Semantic design tokens (see DESIGN.md)
+        terracotta: "#C0562E",
+        "terracotta-deep": "#9A421F",
+        ochre: "#CA8A47",
+        ink: "#1C1917",
+        graphite: "#44403C",
+        stone: "#78716C",
+        hairline: "#E7E5E4",
+        surface: "#FFFFFF",
+        canvas: "#FBFAF8",
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-jetbrains-mono)', 'monospace'],
+        sans: ["var(--font-hanken)", "system-ui", "sans-serif"],
+        serif: ["var(--font-spectral)", "Georgia", "serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
+      },
+      boxShadow: {
+        lift: "0 8px 24px -8px rgba(28, 25, 23, 0.18)",
       },
     },
   },

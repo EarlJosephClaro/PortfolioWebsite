@@ -15,9 +15,23 @@ export const personalInfo = {
 export const experience = [
   {
     company: "Sun-Asterisk Software Development Inc.",
+    position: "Full-Stack Developer — Facility Management System (FMS)",
+    location: "Cebu City, Philippines",
+    period: "June 2026 – Present",
+    achievements: [
+      "Contributed to FMS, an internal asset-management platform for Sun Asterisk PH that serves as the single source of truth for company assets — replacing a legacy spreadsheet and Google Form workflow",
+      "Built the platform end-to-end through a fully AI-Driven Development (AIDD) workflow — Explore → Plan → Test → Implement → Verify → Commit — automating development and testing with custom Claude Code skills and agents",
+      "Delivered full-stack features across asset workflows (registration, assignment and returns, requests, incidents, reporting) using NestJS, code-first Apollo GraphQL, Prisma 6, and SQL Server with a Next.js frontend",
+      "Automated development and testing with dedicated Claude skills and agents — TDD dev-team and QA-automation-team skills plus unit-test-generator, code-reviewer, and qa-reviewer agents wired into the commit and CI pipeline",
+      "Shipped features in fast 3-day AIDD sprints, applying the latest AI-driven tooling and operations to accelerate delivery while holding quality gates (CI, SonarCloud, secretlint pre-commit scanning)",
+      "Implemented role-based access (admin, management, member) with NextAuth and typed, validated forms using react-hook-form and yup, within an npm-workspaces monorepo and Dockerized SQL Server",
+    ],
+  },
+  {
+    company: "Sun-Asterisk Software Development Inc.",
     position: "AI-Enhanced Full-Stack Developer - HiveHR",
     location: "Cebu City, Philippines",
-    period: "April 2025 – Present",
+    period: "April 2025 – June 2026",
     achievements: [
       "Leveraged AI-Driven Development (AIDD) methodologies to accelerate feature development and code quality in the HiveHR/HRIS enterprise application",
       "Utilized Claude Code for intelligent code generation, refactoring, and optimization, reducing development time while maintaining high code standards",
@@ -78,12 +92,25 @@ export const education = [
 ];
 
 export const skills = {
-  frontend: ["React.js", "Next.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS"],
-  backend: ["NestJS", "Python", "Django", "Node.js", "REST API", "GraphQL"],
+  frontend: ["React.js", "Next.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "React Query"],
+  backend: ["NestJS", "Python", "Django", "Node.js", "REST API", "GraphQL", "Prisma"],
   databases: ["MySQL", "SQL Server", "Firebase", "MongoDB"],
   deployment: ["Azure", "DigitalOcean", "Vercel", "Docker"],
-  aiTools: ["Claude Code", "Claude Workflows", "Claude Git Actions", "AI-Driven Development (AIDD)"],
-  tools: ["Git", "GitHub", "GitLab", "GitHub Actions", "Figma", "Canva", "Adobe Photoshop", "Notion"],
+  aiTools: [
+    "AI-Driven Development (AIDD)",
+    "Claude Code",
+    "Claude Skills",
+    "Claude Agents",
+    "Claude Slash Commands",
+    "Claude Workflows",
+    "Claude Git Actions",
+    "Spec-Driven Development (SDD)",
+    "Test-Driven Development (TDD)",
+    "AI Code Review",
+    "AI Test Generation",
+    "Prompt Engineering",
+  ],
+  tools: ["Git", "GitHub", "GitLab", "GitHub Actions", "Playwright", "Figma", "Canva", "Adobe Photoshop", "Notion"],
   methodologies: ["Agile", "Scrum", "CI/CD"],
 };
 

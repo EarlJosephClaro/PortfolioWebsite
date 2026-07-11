@@ -32,3 +32,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# impeccable design tooling (local dev tool + working artifacts)
+.github/skills/
+.github/hooks/
+.impeccable/

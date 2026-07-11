@@ -4,7 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 
 export default function Education() {
   return (
-    <section id="education" className="bg-[#F4F1EC] py-24">
+    <section id="education" className="bg-canvas-sunk py-24">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl">
           <SectionHeading title="Education & Languages" />

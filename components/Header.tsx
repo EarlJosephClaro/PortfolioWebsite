@@ -18,9 +18,19 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    let raf = 0;
+    const handleScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 50);
+        raf = 0;
+      });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
@@ -41,7 +51,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-medium text-graphite transition-colors duration-200 hover:text-terracotta"
+                  className="text-sm font-medium text-graphite transition-colors duration-200 hover:text-terracotta-deep"
                 >
                   {link.label}
                 </Link>
@@ -68,7 +78,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block rounded-lg px-4 py-2.5 font-medium text-graphite transition-colors duration-200 hover:bg-surface hover:text-terracotta"
+                  className="block rounded-lg px-4 py-2.5 font-medium text-graphite transition-colors duration-200 hover:bg-surface hover:text-terracotta-deep"
                 >
                   {link.label}
                 </Link>

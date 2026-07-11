@@ -30,9 +30,11 @@ const config: Config = {
         ink: "#1C1917",
         graphite: "#44403C",
         stone: "#78716C",
+        "stone-light": "#A8A29E",
         hairline: "#E7E5E4",
         surface: "#FFFFFF",
         canvas: "#FBFAF8",
+        "canvas-sunk": "#F4F1EC",
       },
       fontFamily: {
         sans: ["var(--font-hanken)", "system-ui", "sans-serif"],

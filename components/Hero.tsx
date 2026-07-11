@@ -66,7 +66,7 @@ export default function Hero() {
                 <dt className="sr-only">{m.label}</dt>
                 <dd className="font-mono text-4xl font-semibold leading-none text-ink">
                   {m.num}
-                  {m.suffix && <span className="text-ochre">{m.suffix}</span>}
+                  {m.suffix && <span className="text-terracotta-deep">{m.suffix}</span>}
                 </dd>
                 <p className="mt-2 text-sm leading-snug text-stone">{m.label}</p>
               </div>
@@ -102,13 +102,13 @@ export default function Hero() {
               {personalInfo.location}
             </span>
             <span className="hidden h-4 w-px bg-hairline sm:inline-block" aria-hidden />
-            <div className="flex items-center gap-5 text-xl">
+            <div className="-my-2.5 flex items-center gap-1 text-xl">
               <a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="transition-colors duration-200 hover:text-terracotta"
+                className="flex h-11 w-11 items-center justify-center rounded-lg transition-colors duration-200 hover:text-terracotta"
               >
                 <FaGithub />
               </a>
@@ -117,14 +117,14 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="transition-colors duration-200 hover:text-terracotta"
+                className="flex h-11 w-11 items-center justify-center rounded-lg transition-colors duration-200 hover:text-terracotta"
               >
                 <FaLinkedin />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
                 aria-label="Email"
-                className="transition-colors duration-200 hover:text-terracotta"
+                className="flex h-11 w-11 items-center justify-center rounded-lg transition-colors duration-200 hover:text-terracotta"
               >
                 <FaEnvelope />
               </a>

@@ -107,7 +107,7 @@ A warm, earthy palette: one committed terracotta accent over a family of warm-st
 - **Deep Terracotta** (`#9A421F`, `oklch(48% 0.13 42)`): the accent at working contrast — solid button fills and any terracotta surface that carries text. Passes AA against white/canvas where the lighter terracotta would not.
 
 ### Secondary
-- **Ochre** (`#CA8A47`, `oklch(68% 0.10 68)`): a warm highlight for proof moments only — the leading digit of a metric, a subtle underline on a number. Never a second general-purpose accent.
+- **Ochre** (`#CA8A47`, `oklch(68% 0.10 68)`): a warm highlight for **large or graphic** accents only — a decorative rule, an oversized flourish. It does **not** meet text contrast on canvas (2.8:1), so never use it for words, small labels, or meaning-bearing characters; metric accents and any text-bearing warmth use **Deep Terracotta** instead. Never a second general-purpose accent.
 
 ### Neutral
 - **Ink** (`#1C1917`, `oklch(23% 0.007 55)`): primary headings and any drenched dark surface (footer, a dark CTA band). Warm near-black, never pure `#000`.
